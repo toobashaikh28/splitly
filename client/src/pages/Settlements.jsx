@@ -1,91 +1,176 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { CheckCircle2, HandCoins } from "lucide-react";
 import api from "../api/axios.js";
+import useResource from "../hooks/useResource.js";
+import { errorMessage } from "../utils/errors.js";
+import { Page, PageHeader, PageColumns, Section, Panel, AsidePanel, StatList, Stat } from "../components/ui/Page.jsx";
+import Button from "../components/ui/Button.jsx";
+import Alert from "../components/ui/Alert.jsx";
+import Amount from "../components/ui/Amount.jsx";
+import Avatar from "../components/ui/Avatar.jsx";
 import StatusBadge from "../components/StatusBadge.jsx";
+import PersonBalances from "../components/PersonBalances.jsx";
+import { netByPerson } from "../utils/balances.js";
+import { EmptyState, ErrorState, ListSkeleton } from "../components/ui/States.jsx";
 
-export default function Settlements() {
-  const [data, setData] = useState(null);
+function SettlementRow({ person, group, amount, tone, action }) {
+  return (
+    <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-x-3 gap-y-2 px-4 py-3.5 sm:grid-cols-[auto_minmax(0,1fr)_auto_11rem] sm:items-center sm:gap-x-4 sm:px-5">
+      <Avatar name={person} className="row-span-2 sm:row-span-1" />
+      <div className="min-w-0">
+        <p className="break-words text-body font-medium text-ink sm:truncate">@{person}</p>
+        <p className="truncate text-small text-muted">{group}</p>
+      </div>
+      <Amount value={amount} tone={tone} className="text-body font-semibold" />
+      <div className="col-span-2 col-start-2 sm:col-span-1 sm:col-start-4 sm:text-right">{action}</div>
+    </div>
+  );
+}
 
-  const load = () => api.get("/settlements/mine").then((res) => setData(res.data));
-
-  useEffect(() => {
-    load();
-  }, []);
-
-  const markPaid = async (id) => {
-    await api.patch(`/settlements/${id}/mark-paid`);
-    load();
-  };
-
-  const confirmPaid = async (id) => {
-    await api.patch(`/settlements/${id}/confirm`);
-    load();
-  };
-
-  if (!data) return <div className="p-8 text-ink/50">Loading...</div>;
+function Summary({ data }) {
+  const net = Math.round((data.totalOwedToYou - data.totalOwed) * 100) / 100;
+  const toPay = data.owe.filter((s) => s.status === "pending").length;
+  const toConfirm = data.owed.filter((s) => s.status === "marked_paid").length;
+  const waiting = data.owe.filter((s) => s.status === "marked_paid").length + data.owed.filter((s) => s.status === "pending").length;
+  const people = netByPerson(data.owe, data.owed);
+  const headline = net > 0 ? "You're owed more than you owe." : net < 0 ? "You owe more than you're owed." : "You're all square.";
 
   return (
-    <div className="max-w-3xl px-6 md:px-10 py-8 md:py-10">
-      <h1 className="font-display font-semibold text-2xl text-ink2 mb-8">Settle up</h1>
+    <>
+      <AsidePanel title="Net position">
+        <p className="text-figure font-semibold">
+          {net === 0 ? <Amount value={0} /> : <Amount value={Math.abs(net)} tone={net > 0 ? "owed" : "owe"} sign />}
+        </p>
+        <p className="mt-1 text-small text-muted">{headline}</p>
+        <div className="my-4 border-t border-dashed border-line-strong" />
+        <StatList>
+          <Stat label="You owe">
+            <Amount value={data.totalOwed} tone={data.totalOwed > 0 ? "owe" : "neutral"} />
+          </Stat>
+          <Stat label="You're owed">
+            <Amount value={data.totalOwedToYou} tone={data.totalOwedToYou > 0 ? "owed" : "neutral"} />
+          </Stat>
+        </StatList>
+      </AsidePanel>
 
-      <section className="mb-10">
-        <h2 className="font-display font-semibold text-ink2 mb-3">
-          You owe <span className="font-amount text-owe">Rs. {data.totalOwed}</span>
-        </h2>
-        <div className="flex flex-col gap-3">
-          {data.owe.map((s) => (
-            <div key={s._id} className="bg-white border border-line rounded-md p-4 flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-ink">To @{s.to.username}</p>
-                <p className="text-xs text-ink/50">{s.group?.name}</p>
-              </div>
-              <div className="text-right flex flex-col items-end gap-1.5">
-                <span className="font-amount text-sm font-semibold text-owe">Rs. {s.amount}</span>
-                {s.status === "pending" ? (
-                  <button
-                    onClick={() => markPaid(s._id)}
-                    className="text-xs font-medium bg-marigold text-ink2 px-3 py-1 rounded-full hover:bg-marigoldDark hover:text-white"
-                  >
-                    Mark as paid
-                  </button>
-                ) : (
-                  <StatusBadge status={s.status} />
-                )}
-              </div>
-            </div>
-          ))}
-          {data.owe.length === 0 && <p className="text-sm text-ink/50">Nothing pending. You're all clear.</p>}
-        </div>
-      </section>
+      <AsidePanel title="What's next">
+        <StatList>
+          <Stat label="Payments to make">{toPay}</Stat>
+          <Stat label="Payments to confirm" emphasis={toConfirm > 0}>{toConfirm}</Stat>
+          <Stat label="Waiting on someone else">{waiting}</Stat>
+        </StatList>
+      </AsidePanel>
 
-      <section>
-        <h2 className="font-display font-semibold text-ink2 mb-3">
-          You're owed <span className="font-amount text-owed">Rs. {data.totalOwedToYou}</span>
-        </h2>
-        <div className="flex flex-col gap-3">
-          {data.owed.map((s) => (
-            <div key={s._id} className="bg-white border border-line rounded-md p-4 flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-ink">From @{s.from.username}</p>
-                <p className="text-xs text-ink/50">{s.group?.name}</p>
-              </div>
-              <div className="text-right flex flex-col items-end gap-1.5">
-                <span className="font-amount text-sm font-semibold text-owed">Rs. {s.amount}</span>
-                {s.status === "marked_paid" ? (
-                  <button
-                    onClick={() => confirmPaid(s._id)}
-                    className="text-xs font-medium bg-owed text-white px-3 py-1 rounded-full hover:bg-owed/80"
-                  >
-                    Confirm received
-                  </button>
-                ) : (
-                  <StatusBadge status={s.status} />
-                )}
-              </div>
-            </div>
-          ))}
-          {data.owed.length === 0 && <p className="text-sm text-ink/50">No one owes you right now.</p>}
+      {people.length > 0 && (
+        <AsidePanel title="By person">
+          <PersonBalances people={people} />
+          <p className="mt-3 text-small text-subtle">Net across all groups.</p>
+        </AsidePanel>
+      )}
+    </>
+  );
+}
+
+export default function Settlements() {
+  const { data, error, loading, reload } = useResource("/settlements/mine");
+  const [busyId, setBusyId] = useState(null);
+  const [actionError, setActionError] = useState("");
+
+  const run = async (id, path, fallback) => {
+    setActionError("");
+    setBusyId(id);
+    try {
+      await api.patch(`/settlements/${id}/${path}`);
+      await reload();
+    } catch (err) {
+      setActionError(errorMessage(err, fallback));
+    } finally {
+      setBusyId(null);
+    }
+  };
+
+  const markPaid = (id) => run(id, "mark-paid", "Couldn't mark that as paid.");
+  const confirmPaid = (id) => run(id, "confirm", "Couldn't confirm that payment.");
+
+  return (
+    <Page width="wide">
+      <PageHeader className="max-w-form xl:max-w-none" title="Settle up" description="Mark what you've paid, and confirm what you've received." />
+
+      {actionError && (
+        <Alert tone="error" className="mb-6" onDismiss={() => setActionError("")}>
+          {actionError}
+        </Alert>
+      )}
+
+      <PageColumns aside={data ? <Summary data={data} /> : null}>
+      {loading ? (
+        <ListSkeleton rows={3} />
+      ) : error && !data ? (
+        <ErrorState message={error} onRetry={reload} />
+      ) : (
+        <div className="space-y-10">
+          <Section
+            title="You owe"
+            action={data.totalOwed > 0 && <Amount value={data.totalOwed} tone="owe" className="text-heading font-semibold" />}
+          >
+            {data.owe.length === 0 ? (
+              <EmptyState icon={CheckCircle2} title="You're all clear" description="You don't owe anyone right now." />
+            ) : (
+              <Panel className="divide-y divide-line">
+                {data.owe.map((s) => (
+                  <SettlementRow
+                    key={s._id}
+                    person={s.to.username}
+                    group={s.group?.name}
+                    amount={s.amount}
+                    tone="owe"
+                    action={
+                      s.status === "pending" ? (
+                        <Button variant="secondary" size="sm" loading={busyId === s._id} onClick={() => markPaid(s._id)}>
+                          Mark as paid
+                        </Button>
+                      ) : (
+                        <StatusBadge status={s.status} />
+                      )
+                    }
+                  />
+                ))}
+              </Panel>
+            )}
+          </Section>
+
+          <Section
+            title="You're owed"
+            action={data.totalOwedToYou > 0 && <Amount value={data.totalOwedToYou} tone="owed" className="text-heading font-semibold" />}
+          >
+            {data.owed.length === 0 ? (
+              <EmptyState icon={HandCoins} title="Nothing to collect" description="No one owes you right now." />
+            ) : (
+              <Panel className="divide-y divide-line">
+                {data.owed.map((s) => (
+                  <SettlementRow
+                    key={s._id}
+                    person={s.from.username}
+                    group={s.group?.name}
+                    amount={s.amount}
+                    tone="owed"
+                    action={
+                      s.status === "marked_paid" ? (
+                        <Button variant="primary" size="sm" loading={busyId === s._id} onClick={() => confirmPaid(s._id)}>
+                          Confirm received
+                        </Button>
+                      ) : (
+                        <StatusBadge status={s.status} />
+                      )
+                    }
+                  />
+                ))}
+              </Panel>
+            )}
+          </Section>
         </div>
-      </section>
-    </div>
+      )}
+      </PageColumns>
+    </Page>
   );
 }

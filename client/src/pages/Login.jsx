@@ -1,82 +1,104 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Receipt } from "lucide-react";
+import { useRef, useState } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
+import { errorMessage } from "../utils/errors.js";
+import { safeRedirect } from "../utils/format.js";
+import { emailError } from "../utils/validate.js";
+import AuthLayout from "../components/AuthLayout.jsx";
+import Alert from "../components/ui/Alert.jsx";
+import Button from "../components/ui/Button.jsx";
+import { Input, PasswordInput } from "../components/ui/Field.jsx";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [touched, setTouched] = useState({});
   const [loading, setLoading] = useState(false);
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
   const { login } = useAuth();
   const navigate = useNavigate();
+  const [params] = useSearchParams();
+
+  // Invite links send signed-out people here; bring them back afterwards.
+  const redirect = safeRedirect(params.get("redirect"));
+  const carry = redirect === "/" ? "" : `?redirect=${encodeURIComponent(redirect)}`;
+  const invited = redirect.startsWith("/join/");
+
+  const errors = {
+    email: emailError(email),
+    password: password ? "" : "Enter your password.",
+  };
+  const shown = (field) => (submitted || touched[field] ? errors[field] : "");
+  const touch = (field) => () => setTouched((t) => ({ ...t, [field]: true }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setSubmitted(true);
+    if (errors.email) return emailRef.current?.focus();
+    if (errors.password) return passwordRef.current?.focus();
+
     setLoading(true);
     try {
-      await login(email, password);
-      navigate("/");
+      await login(email.trim(), password);
+      navigate(redirect, { replace: true });
     } catch (err) {
-      setError(err.response?.data?.message || "Couldn't log in. Check your details and try again.");
-    } finally {
+      setError(
+        err?.response?.status === 401
+          ? "That email and password don't match. Check them and try again."
+          : errorMessage(err, "Couldn't log in. Try again in a moment.")
+      );
       setLoading(false);
+      passwordRef.current?.select();
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-paper px-4">
-      <div className="w-full max-w-sm">
-        <div className="flex items-center gap-2 justify-center mb-8">
-          <Receipt size={26} className="text-marigoldDark" />
-          <span className="font-display font-semibold text-2xl text-ink2">Splitly</span>
-        </div>
+    <AuthLayout>
+      <h1 className="text-title font-semibold text-ink">Log in</h1>
+      <p className="mt-1 text-body text-muted">Welcome back. Pick up where you left off.</p>
 
-        <div className="bg-white border border-line rounded-md p-6">
-          <h1 className="font-display font-semibold text-lg text-ink2 mb-1">Welcome back</h1>
-          <p className="text-sm text-ink/60 mb-6">Log in to see who owes what.</p>
+      <form onSubmit={handleSubmit} noValidate className="mt-8 flex flex-col gap-4">
+        {invited && <Alert tone="info">You've been invited to a group. Log in to join it.</Alert>}
+        {error && <Alert tone="error">{error}</Alert>}
+        <Input
+          ref={emailRef}
+          label="Email"
+          type="email"
+          inputMode="email"
+          autoComplete="email"
+          autoCapitalize="none"
+          spellCheck={false}
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          onBlur={touch("email")}
+          error={shown("email")}
+        />
+        <PasswordInput
+          ref={passwordRef}
+          label="Password"
+          autoComplete="current-password"
+          required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          onBlur={touch("password")}
+          error={shown("password")}
+        />
+        <Button type="submit" variant="primary" loading={loading} className="mt-2 w-full">
+          {loading ? "Logging in…" : "Log in"}
+        </Button>
+      </form>
 
-          {error && <div className="bg-oweSoft text-owe text-sm rounded-sm px-3 py-2 mb-4">{error}</div>}
-
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <div>
-              <label className="text-sm font-medium text-ink/80">Email</label>
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 w-full border border-line rounded-sm px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-marigold"
-              />
-            </div>
-            <div>
-              <label className="text-sm font-medium text-ink/80">Password</label>
-              <input
-                type="password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 w-full border border-line rounded-sm px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-marigold"
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={loading}
-              className="bg-ink2 text-white rounded-sm py-2.5 text-sm font-medium hover:bg-ink transition-colors disabled:opacity-60"
-            >
-              {loading ? "Logging in..." : "Log in"}
-            </button>
-          </form>
-        </div>
-
-        <p className="text-center text-sm text-ink/60 mt-4">
-          New here?{" "}
-          <Link to="/register" className="text-marigoldDark font-medium">
-            Create an account
-          </Link>
-        </p>
-      </div>
-    </div>
+      <p className="mt-6 text-body text-muted">
+        New to Splitly?{" "}
+        <Link to={`/register${carry}`} className="rounded-control font-medium text-primary hover:underline">
+          Create an account
+        </Link>
+      </p>
+    </AuthLayout>
   );
 }

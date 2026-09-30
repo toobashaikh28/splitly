@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { Receipt } from "lucide-react";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import api from "../api/axios.js";
 import { useAuth } from "../context/AuthContext.jsx";
+import { errorMessage } from "../utils/errors.js";
+import { pluralize } from "../utils/format.js";
+import AuthLayout from "../components/AuthLayout.jsx";
+import Alert from "../components/ui/Alert.jsx";
+import Button from "../components/ui/Button.jsx";
+import { Skeleton } from "../components/ui/States.jsx";
 
 export default function JoinGroup() {
   const { inviteCode } = useParams();
@@ -10,56 +15,76 @@ export default function JoinGroup() {
   const navigate = useNavigate();
   const [preview, setPreview] = useState(null);
   const [error, setError] = useState("");
+  const [joinError, setJoinError] = useState("");
   const [joining, setJoining] = useState(false);
 
   useEffect(() => {
     api
       .get(`/groups/join/${inviteCode}`)
       .then((res) => setPreview(res.data))
-      .catch(() => setError("This invite link isn't valid."));
+      .catch(() => setError("This invite link isn't valid. Ask whoever sent it for a fresh one."));
   }, [inviteCode]);
 
   useEffect(() => {
     if (!loading && !user) {
       // send them to login, then bounce back here after
-      navigate(`/login?redirect=/join/${inviteCode}`);
+      navigate(`/login?redirect=${encodeURIComponent(`/join/${inviteCode}`)}`);
     }
   }, [loading, user]);
 
   const handleJoin = async () => {
+    setJoinError("");
     setJoining(true);
     try {
       const res = await api.post(`/groups/join/${inviteCode}`);
       navigate(`/groups/${res.data.groupId}`);
     } catch (err) {
-      setError(err.response?.data?.message || "Couldn't join this group.");
-    } finally {
+      setJoinError(errorMessage(err, "Couldn't join this group."));
       setJoining(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-paper px-4">
-      <div className="w-full max-w-sm bg-white border border-line rounded-md p-6 text-center">
-        <Receipt size={26} className="text-marigoldDark mx-auto mb-4" />
-        {error && <p className="text-sm text-owe">{error}</p>}
-        {!error && !preview && <p className="text-sm text-ink/50">Loading invite...</p>}
-        {!error && preview && (
-          <>
-            <h1 className="font-display font-semibold text-lg text-ink2 mb-1">Join {preview.name}?</h1>
-            <p className="text-sm text-ink/60 mb-6">
-              {preview.category} · {preview.memberCount} member{preview.memberCount === 1 ? "" : "s"}
-            </p>
-            <button
-              onClick={handleJoin}
-              disabled={joining}
-              className="w-full bg-ink2 text-white rounded-sm py-2.5 text-sm font-medium hover:bg-ink transition-colors disabled:opacity-60"
-            >
-              {joining ? "Joining..." : "Join group"}
-            </button>
-          </>
-        )}
-      </div>
-    </div>
+    <AuthLayout>
+      {error ? (
+        <>
+          <h1 className="text-title font-semibold text-ink">Invite not found</h1>
+          <p className="mt-1 text-body text-muted">{error}</p>
+          <Button as={Link} to="/" variant="secondary" className="mt-8 w-full">
+            Go to Splitly
+          </Button>
+        </>
+      ) : !preview ? (
+        <div role="status" aria-label="Loading invite" className="space-y-3">
+          <Skeleton className="h-3 w-24" />
+          <Skeleton className="h-8 w-3/4" />
+          <Skeleton className="h-4 w-1/2" />
+          <Skeleton className="mt-6 h-10 w-full" />
+        </div>
+      ) : (
+        <>
+          <p className="eyebrow">You're invited</p>
+          <h1 className="mt-2 break-words text-title font-semibold text-ink">Join {preview.name}</h1>
+          <p className="mt-1 text-body text-muted">
+            {preview.category} · {pluralize(preview.memberCount, "member")}
+          </p>
+
+          {joinError && (
+            <Alert tone="error" className="mt-6">
+              {joinError}
+            </Alert>
+          )}
+
+          <div className="mt-8 flex flex-col gap-2">
+            <Button variant="primary" onClick={handleJoin} loading={joining} className="w-full">
+              {joining ? "Joining…" : "Join group"}
+            </Button>
+            <Button as={Link} to="/" variant="ghost" className="w-full">
+              Not now
+            </Button>
+          </div>
+        </>
+      )}
+    </AuthLayout>
   );
 }

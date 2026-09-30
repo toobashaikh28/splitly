@@ -1,94 +1,121 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Receipt } from "lucide-react";
+import { useRef, useState } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
+import { errorMessage } from "../utils/errors.js";
+import { safeRedirect } from "../utils/format.js";
+import { emailError, newPasswordError, normalizeUsername, usernameError, PASSWORD_MIN } from "../utils/validate.js";
+import AuthLayout from "../components/AuthLayout.jsx";
+import PasswordStrength from "../components/PasswordStrength.jsx";
+import Alert from "../components/ui/Alert.jsx";
+import Button from "../components/ui/Button.jsx";
+import { Input, PasswordInput } from "../components/ui/Field.jsx";
 
 export default function Register() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [touched, setTouched] = useState({});
   const [loading, setLoading] = useState(false);
+  const refs = { username: useRef(null), email: useRef(null), password: useRef(null) };
   const { register } = useAuth();
   const navigate = useNavigate();
+  const [params] = useSearchParams();
+
+  const redirect = safeRedirect(params.get("redirect"));
+  const carry = redirect === "/" ? "" : `?redirect=${encodeURIComponent(redirect)}`;
+  const invited = redirect.startsWith("/join/");
+
+  const errors = {
+    username: usernameError(username),
+    email: emailError(email),
+    password: newPasswordError(password),
+  };
+  const shown = (field) => (submitted || touched[field] ? errors[field] : "");
+  const touch = (field) => () => setTouched((t) => ({ ...t, [field]: true }));
+
+  const handle = normalizeUsername(username);
+  const usernameHint = !errors.username ? `You'll appear as @${handle}.` : "Friends find you by this. Letters, numbers, . and _";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setSubmitted(true);
+    const firstBad = ["username", "email", "password"].find((f) => errors[f]);
+    if (firstBad) return refs[firstBad].current?.focus();
+
     setLoading(true);
     try {
-      await register(username, email, password);
-      navigate("/");
+      await register(handle, email.trim(), password);
+      navigate(redirect, { replace: true });
     } catch (err) {
-      setError(err.response?.data?.message || "Couldn't create your account. Try again.");
-    } finally {
+      setError(errorMessage(err, "Couldn't create your account. Try again in a moment."));
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-paper px-4">
-      <div className="w-full max-w-sm">
-        <div className="flex items-center gap-2 justify-center mb-8">
-          <Receipt size={26} className="text-marigoldDark" />
-          <span className="font-display font-semibold text-2xl text-ink2">Splitly</span>
+    <AuthLayout>
+      <h1 className="text-title font-semibold text-ink">Create your account</h1>
+      <p className="mt-1 text-body text-muted">It takes a minute. Then add friends and start splitting.</p>
+
+      <form onSubmit={handleSubmit} noValidate className="mt-8 flex flex-col gap-4">
+        {invited && <Alert tone="info">You've been invited to a group. Create an account to join it.</Alert>}
+        {error && <Alert tone="error">{error}</Alert>}
+        <Input
+          ref={refs.username}
+          label="Username"
+          autoComplete="username"
+          autoCapitalize="none"
+          spellCheck={false}
+          required
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          onBlur={touch("username")}
+          placeholder="ali123"
+          hint={usernameHint}
+          error={shown("username")}
+        />
+        <Input
+          ref={refs.email}
+          label="Email"
+          type="email"
+          inputMode="email"
+          autoComplete="email"
+          autoCapitalize="none"
+          spellCheck={false}
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          onBlur={touch("email")}
+          error={shown("email")}
+        />
+        <div>
+          <PasswordInput
+            ref={refs.password}
+            label="Password"
+            autoComplete="new-password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            onBlur={touch("password")}
+            hint={`At least ${PASSWORD_MIN} characters.`}
+            error={shown("password")}
+          />
+          <PasswordStrength password={password} />
         </div>
+        <Button type="submit" variant="primary" loading={loading} className="mt-2 w-full">
+          {loading ? "Creating account…" : "Create account"}
+        </Button>
+      </form>
 
-        <div className="bg-white border border-line rounded-md p-6">
-          <h1 className="font-display font-semibold text-lg text-ink2 mb-1">Create your account</h1>
-          <p className="text-sm text-ink/60 mb-6">Split what you actually ordered, not the whole bill.</p>
-
-          {error && <div className="bg-oweSoft text-owe text-sm rounded-sm px-3 py-2 mb-4">{error}</div>}
-
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <div>
-              <label className="text-sm font-medium text-ink/80">Username</label>
-              <input
-                required
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className="mt-1 w-full border border-line rounded-sm px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-marigold"
-                placeholder="ali123"
-              />
-            </div>
-            <div>
-              <label className="text-sm font-medium text-ink/80">Email</label>
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 w-full border border-line rounded-sm px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-marigold"
-              />
-            </div>
-            <div>
-              <label className="text-sm font-medium text-ink/80">Password</label>
-              <input
-                type="password"
-                required
-                minLength={6}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 w-full border border-line rounded-sm px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-marigold"
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={loading}
-              className="bg-ink2 text-white rounded-sm py-2.5 text-sm font-medium hover:bg-ink transition-colors disabled:opacity-60"
-            >
-              {loading ? "Creating account..." : "Create account"}
-            </button>
-          </form>
-        </div>
-
-        <p className="text-center text-sm text-ink/60 mt-4">
-          Already have an account?{" "}
-          <Link to="/login" className="text-marigoldDark font-medium">
-            Log in
-          </Link>
-        </p>
-      </div>
-    </div>
+      <p className="mt-6 text-body text-muted">
+        Already have an account?{" "}
+        <Link to={`/login${carry}`} className="rounded-control font-medium text-primary hover:underline">
+          Log in
+        </Link>
+      </p>
+    </AuthLayout>
   );
 }

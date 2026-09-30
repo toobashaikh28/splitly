@@ -1,19 +1,14 @@
-const STYLES = {
-  pending: "bg-oweSoft text-owe",
-  marked_paid: "bg-marigold/15 text-marigoldDark",
-  cleared: "bg-owedSoft text-owed",
-};
+import Badge from "./ui/Badge.jsx";
 
-const LABELS = {
-  pending: "Pending",
-  marked_paid: "Marked paid",
-  cleared: "Cleared",
+// Amount colour already says who owes whom, so status stays neutral until
+// something is waiting on someone (amber) or finished (green).
+const STATUS = {
+  pending: { tone: "neutral", label: "Pending" },
+  marked_paid: { tone: "warning", label: "Awaiting confirmation" },
+  cleared: { tone: "positive", label: "Cleared" },
 };
 
 export default function StatusBadge({ status }) {
-  return (
-    <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${STYLES[status] || STYLES.pending}`}>
-      {LABELS[status] || status}
-    </span>
-  );
+  const { tone, label } = STATUS[status] || { tone: "neutral", label: status };
+  return <Badge tone={tone}>{label}</Badge>;
 }
