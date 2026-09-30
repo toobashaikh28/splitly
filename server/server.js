@@ -14,7 +14,6 @@ import aiRoutes from "./routes/ai.routes.js";
 import analyticsRoutes from "./routes/analytics.routes.js";
 
 dotenv.config();
-connectDB();
 
 const app = express();
 
@@ -23,6 +22,20 @@ app.use(express.json());
 
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok", message: "Server is running" });
+});
+
+// Connect to the database on demand and wait for it, so it also works where
+// the server is paused between requests (Vercel).
+let dbReady;
+app.use(async (req, res, next) => {
+  try {
+    dbReady = dbReady || connectDB();
+    await dbReady;
+    next();
+  } catch (err) {
+    dbReady = null;
+    next(err);
+  }
 });
 
 app.use("/api/auth", authRoutes);
@@ -48,6 +61,8 @@ if (!process.env.VERCEL) {
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
+  // On your own computer, connect straight away like before.
+  dbReady = connectDB();
 }
 
 export default app;
