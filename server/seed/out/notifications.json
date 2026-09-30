@@ -1,0 +1,1593 @@
+[
+  {
+    "_id": {
+      "$oid": "ecd55415cdac9a4794ce89ef"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "payment_reminder",
+    "message": "Reminder: you still owe Rs. 4933.33 to hina for K-Electric Bill",
+    "relatedGroup": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "relatedSettlement": {
+      "$oid": "1186a82b9ac0272637ed38b2"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-29T21:50:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-29T21:50:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "bf75edf83e6548d9d10f95af"
+    },
+    "recipient": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "type": "new_expense",
+    "message": "Chaaye Khana: you owe Rs. 350 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "0ca1bc751599045e4f2032b1"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "dfc40462fa5bd14ff14da633"
+    },
+    "recipient": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "type": "new_expense",
+    "message": "Chaaye Khana: you owe Rs. 350 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "b554e766df118bdd85bc6ce3"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "2b01fb925240a8f7eff2b49c"
+    },
+    "recipient": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "type": "new_expense",
+    "message": "Chaaye Khana: you owe Rs. 350 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "d208dd4fbb5bc92f48986a6b"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "2228bef01588a4a0682d4b3e"
+    },
+    "recipient": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "type": "payment_marked_paid",
+    "message": "Rs. 1500 was marked as paid — confirm to clear it",
+    "relatedGroup": {
+      "$oid": "5e30ff0f2381fd2680aad4fe"
+    },
+    "relatedSettlement": {
+      "$oid": "5dd50cf032787bc839c81822"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "ecf19df9a79bc03262382e97"
+    },
+    "recipient": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "type": "payment_marked_paid",
+    "message": "Rs. 2255.92 was marked as paid — confirm to clear it",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "223f3fb10751d6151ab5290b"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "db1f18012833d48b492bcfd0"
+    },
+    "recipient": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 1200 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "relatedSettlement": {
+      "$oid": "eb1a5ca53999d28e24bfe1b2"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "2dd3ba1e8dc220ad67282994"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "new_expense",
+    "message": "Cinepax: you owe Rs. 1500 — added by a group member",
+    "relatedGroup": {
+      "$oid": "5e30ff0f2381fd2680aad4fe"
+    },
+    "relatedSettlement": {
+      "$oid": "788685b08d39887c387e8e36"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "0c37c3de9f30bd18f4e26410"
+    },
+    "recipient": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "type": "new_expense",
+    "message": "Cinepax: you owe Rs. 1500 — added by a group member",
+    "relatedGroup": {
+      "$oid": "5e30ff0f2381fd2680aad4fe"
+    },
+    "relatedSettlement": {
+      "$oid": "5dd50cf032787bc839c81822"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "2c65781d962d45946dbec2b2"
+    },
+    "recipient": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "type": "new_expense",
+    "message": "Cinepax: you owe Rs. 1500 — added by a group member",
+    "relatedGroup": {
+      "$oid": "5e30ff0f2381fd2680aad4fe"
+    },
+    "relatedSettlement": {
+      "$oid": "aa2be7714860f74c73054a6b"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "60b941bdd510066edb696341"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "new_expense",
+    "message": "Kolachi Restaurant: you owe Rs. 1882.17 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "2d433b64a294be38eacd5fd7"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-27T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-27T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "32dada8b1b07ed29b42718e9"
+    },
+    "recipient": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "type": "new_expense",
+    "message": "Kolachi Restaurant: you owe Rs. 2255.92 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "223f3fb10751d6151ab5290b"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-27T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-27T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "49276c5bc0d311412f791f61"
+    },
+    "recipient": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "type": "new_expense",
+    "message": "Kolachi Restaurant: you owe Rs. 1546.75 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "7641e02a842af3b0c0cf964d"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-27T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-27T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "0f74019c2748c68d34c14c2a"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "new_expense",
+    "message": "Water Tanker (2 refills): you owe Rs. 1200 — added by a group member",
+    "relatedGroup": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "relatedSettlement": {
+      "$oid": "e77265c0c5b491cc7d83e43c"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-26T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-26T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "3590f49fa4ffa0ff7b51d3e9"
+    },
+    "recipient": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 4933.33 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "relatedSettlement": {
+      "$oid": "f928bd236caefa7d69ec8cdb"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-26T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-26T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "32f2f72555eebc4f1150f150"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "payment_marked_paid",
+    "message": "Rs. 800 was marked as paid — confirm to clear it",
+    "relatedGroup": {
+      "$oid": "e5790d09e5c64c3eb2471fdc"
+    },
+    "relatedSettlement": {
+      "$oid": "c9978b16e10fbad327384614"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-26T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-26T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "d2e72b8a5d74dbdfeae56e6a"
+    },
+    "recipient": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "type": "new_expense",
+    "message": "Fast Print Centre: you owe Rs. 800 — added by a group member",
+    "relatedGroup": {
+      "$oid": "e5790d09e5c64c3eb2471fdc"
+    },
+    "relatedSettlement": {
+      "$oid": "e4795e5be927194118f15609"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-25T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-25T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "e7dc30033b2e3ee84b541d9c"
+    },
+    "recipient": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "type": "new_expense",
+    "message": "Fast Print Centre: you owe Rs. 800 — added by a group member",
+    "relatedGroup": {
+      "$oid": "e5790d09e5c64c3eb2471fdc"
+    },
+    "relatedSettlement": {
+      "$oid": "c9978b16e10fbad327384614"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-25T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-25T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "a8e7742655be6b7537c1a365"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "payment_marked_paid",
+    "message": "Rs. 733.13 was marked as paid — confirm to clear it",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "e1edc97b6972030dcc9d4e88"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-24T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-24T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "6c71ac44e702cdf21e888788"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "new_expense",
+    "message": "K-Electric Bill: you owe Rs. 4933.33 — added by a group member",
+    "relatedGroup": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "relatedSettlement": {
+      "$oid": "1186a82b9ac0272637ed38b2"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-24T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-24T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "d5e2c6106035af87f2f7d573"
+    },
+    "recipient": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "type": "new_expense",
+    "message": "Burger Lab: you owe Rs. 1653.13 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "21249fc47a5bc3872c858db0"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "d7de185c2c5a617b5d4d7181"
+    },
+    "recipient": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "type": "new_expense",
+    "message": "Burger Lab: you owe Rs. 1630.13 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "fb5ca6eab4d82d635e4340b6"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "73c864f89a0cc9079c5d76fb"
+    },
+    "recipient": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "type": "new_expense",
+    "message": "Burger Lab: you owe Rs. 733.13 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "e1edc97b6972030dcc9d4e88"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "4dca8fd5395a1bad4935d6dc"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 1500 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "5e30ff0f2381fd2680aad4fe"
+    },
+    "relatedSettlement": {
+      "$oid": "1605a786f3ad5a91c6478b19"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "52191263666900652ff91754"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "group_invite",
+    "message": "omar added you to Sara's Birthday Surprise",
+    "relatedGroup": {
+      "$oid": "7dbc060baeee4e0a017e7d97"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-22T22:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-22T22:00:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "e48fbd745c8638048389f803"
+    },
+    "recipient": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "type": "group_invite",
+    "message": "omar added you to Sara's Birthday Surprise",
+    "relatedGroup": {
+      "$oid": "7dbc060baeee4e0a017e7d97"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-22T22:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-22T22:00:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "d441a88e45adc218deb0181b"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "new_expense",
+    "message": "Zamzama Gift Boutique: you owe Rs. 2625 — added by a group member",
+    "relatedGroup": {
+      "$oid": "7dbc060baeee4e0a017e7d97"
+    },
+    "relatedSettlement": {
+      "$oid": "0cce29de65d57fdb397b19ff"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-22T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-22T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "7bdb181f8249ace04d26a66a"
+    },
+    "recipient": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "type": "new_expense",
+    "message": "Zamzama Gift Boutique: you owe Rs. 2625 — added by a group member",
+    "relatedGroup": {
+      "$oid": "7dbc060baeee4e0a017e7d97"
+    },
+    "relatedSettlement": {
+      "$oid": "1ce4979337a36180881f52d2"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-22T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-22T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "676cb14bfffd73e757ae2277"
+    },
+    "recipient": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "type": "new_expense",
+    "message": "Zamzama Gift Boutique: you owe Rs. 2625 — added by a group member",
+    "relatedGroup": {
+      "$oid": "7dbc060baeee4e0a017e7d97"
+    },
+    "relatedSettlement": {
+      "$oid": "d294751e4ddb2794cfd6ae04"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-22T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-22T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "88dbfbe9e44d43e4a86e6002"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "payment_marked_paid",
+    "message": "Rs. 1500 was marked as paid — confirm to clear it",
+    "relatedGroup": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "relatedSettlement": {
+      "$oid": "5ae03f1e77d5405064ce35b9"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "b313831523f5da0a40270a69"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 2600 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "e5790d09e5c64c3eb2471fdc"
+    },
+    "relatedSettlement": {
+      "$oid": "e62cf9fab2f6e60c72ba3c91"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "c167347b104e58385ed11df4"
+    },
+    "recipient": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "type": "new_expense",
+    "message": "Escape Room Karachi: you owe Rs. 1500 — added by a group member",
+    "relatedGroup": {
+      "$oid": "5e30ff0f2381fd2680aad4fe"
+    },
+    "relatedSettlement": {
+      "$oid": "9724a16bbdb27c6c60319b52"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "bf08b69cb491a30906ec7475"
+    },
+    "recipient": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "type": "new_expense",
+    "message": "Escape Room Karachi: you owe Rs. 1500 — added by a group member",
+    "relatedGroup": {
+      "$oid": "5e30ff0f2381fd2680aad4fe"
+    },
+    "relatedSettlement": {
+      "$oid": "cb9464e70736a80aa065a086"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "55700b1bba7dd7e03333def9"
+    },
+    "recipient": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "type": "new_expense",
+    "message": "StormFiber Internet: you owe Rs. 1500 — added by a group member",
+    "relatedGroup": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "relatedSettlement": {
+      "$oid": "5ae03f1e77d5405064ce35b9"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-20T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-20T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "e7a41ec5342ced659c2f397c"
+    },
+    "recipient": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "type": "new_expense",
+    "message": "StormFiber Internet: you owe Rs. 1500 — added by a group member",
+    "relatedGroup": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "relatedSettlement": {
+      "$oid": "88d1464c6c9de52dbc7fcaf5"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-20T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-20T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "8128283a715f11f022a20750"
+    },
+    "recipient": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "type": "new_expense",
+    "message": "Saddar Electronics: you owe Rs. 2600 — added by a group member",
+    "relatedGroup": {
+      "$oid": "e5790d09e5c64c3eb2471fdc"
+    },
+    "relatedSettlement": {
+      "$oid": "06c46b57f86119d47e627a24"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-19T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-19T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "0834942fdd568edc6a215ffb"
+    },
+    "recipient": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 1135.65 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "04eb28d10d6b6590f6419405"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-18T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-18T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "9182be457bedfb9d2ee2fbf9"
+    },
+    "recipient": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "type": "payment_marked_paid",
+    "message": "Rs. 1050.9 was marked as paid — confirm to clear it",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "7530077fdb6f3c540d211476"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "ddcdbe580568564c583a022f"
+    },
+    "recipient": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 2500 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "49649a60c51bb043ffa8d5ff"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "dee2d359d4b5ffcee694f71c"
+    },
+    "recipient": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 2500 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "c8321fa5fe97ec42b9418704"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "a0effb4bdbb8499a1a571455"
+    },
+    "recipient": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 1317.6 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "1a94af707e6ec757a94cc416"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "5ef9e3b2e473d337a17056d6"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "new_expense",
+    "message": "Broadway Pizza: you owe Rs. 1050.9 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "7530077fdb6f3c540d211476"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-16T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-16T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "ec14b68756711b3769ec737e"
+    },
+    "recipient": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "type": "new_expense",
+    "message": "Broadway Pizza: you owe Rs. 1050.9 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "eed381b051b346d31d35d1ac"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-16T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-16T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "48805e069715899307809ab9"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 9000 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "db5785f842c68b96fda445f1"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "0b87b8bcd67d95fb15d3e615"
+    },
+    "recipient": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 9000 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "a38b9c8d90be3ca670d99377"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "c3493f8b367ae7065b5959ff"
+    },
+    "recipient": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 9000 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "c86d224fc8bb34e7ed5a2a2c"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "2f5c0d409f16184bb3043ef8"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "payment_marked_paid",
+    "message": "Rs. 6400 was marked as paid — confirm to clear it",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "660609b1513135ec3eee34c1"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "99fb54da56858bd731fef81f"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "payment_marked_paid",
+    "message": "Rs. 6400 was marked as paid — confirm to clear it",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "47f667f5d814196ec38078d7"
+    },
+    "read": false,
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "9887e9cf89e40d58f8a37e20"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "new_expense",
+    "message": "Fuel and Tolls: you owe Rs. 2500 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "67360d613674ddeec429646f"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "cdbe32c405ee1ea3433de6c9"
+    },
+    "recipient": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "type": "new_expense",
+    "message": "Fuel and Tolls: you owe Rs. 2500 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "25d472e2f6032800428a69fd"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "464ff3f5e89153c02bd154e0"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "new_expense",
+    "message": "Cafe de Hunza: you owe Rs. 1317.6 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "850fffc96572c3552c8e0a0f"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "ee3250b4fd2cc698f9b1fbb7"
+    },
+    "recipient": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "type": "new_expense",
+    "message": "Cafe de Hunza: you owe Rs. 1317.6 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "733c537bc20cf0d10c5220aa"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "f10f629223bff0cc34119227"
+    },
+    "recipient": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "type": "new_expense",
+    "message": "Cafe de Hunza: you owe Rs. 1155.6 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "31f390b67016bd989b9e96e1"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "6761b122e2cb61f38d7f384c"
+    },
+    "recipient": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "type": "new_expense",
+    "message": "Hunza Serena Inn: you owe Rs. 6400 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "74576fea8f7c4b45556a7f21"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-14T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-14T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "9b59004bcc371078c6e127ea"
+    },
+    "recipient": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "type": "new_expense",
+    "message": "Hunza Serena Inn: you owe Rs. 6400 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "660609b1513135ec3eee34c1"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-14T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-14T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "faab3798be988dff7e8b338e"
+    },
+    "recipient": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "type": "new_expense",
+    "message": "Hunza Serena Inn: you owe Rs. 6400 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "7a225ace906afeca998c2680"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-14T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-14T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "142d643118084516bf5e6bc3"
+    },
+    "recipient": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "type": "new_expense",
+    "message": "Hunza Serena Inn: you owe Rs. 6400 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "47f667f5d814196ec38078d7"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-14T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-14T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "b67d53c580c81897e63d26d1"
+    },
+    "recipient": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "type": "new_expense",
+    "message": "Coaster Rental (Karachi to Hunza): you owe Rs. 9000 — added by a group member",
+    "relatedGroup": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "relatedSettlement": {
+      "$oid": "fa77f2ed504c77be3baca2c8"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-09-13T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-13T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "f20c24fb231905e5159dac55"
+    },
+    "recipient": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "type": "group_invite",
+    "message": "hina added you to Movie Nights",
+    "relatedGroup": {
+      "$oid": "5e30ff0f2381fd2680aad4fe"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-08-27T22:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-08-27T22:00:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "5601f2bd33645cf0ede4201b"
+    },
+    "recipient": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 4400 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "relatedSettlement": {
+      "$oid": "407a20f366166d10058c928a"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-08-25T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-08-25T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "c05403f36116b088cfead9c1"
+    },
+    "recipient": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 4400 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "relatedSettlement": {
+      "$oid": "73bd4355603f99d2e75c2b0c"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-08-25T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-08-25T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "b723b62c52b2aa6d965378fe"
+    },
+    "recipient": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 1638.5 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "4ff0ae8e38eb63c36faca4e4"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-08-23T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-08-23T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "36f406b6bf4ad5b040b543c9"
+    },
+    "recipient": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 960.5 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "330595343531aace618cb18e"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-08-23T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-08-23T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "af74dd5d9e462a3bee90cd0b"
+    },
+    "recipient": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "type": "payment_cleared",
+    "message": "Your Rs. 1638.5 payment was confirmed and cleared",
+    "relatedGroup": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "relatedSettlement": {
+      "$oid": "878c408f16ebc4048bcdee35"
+    },
+    "read": true,
+    "createdAt": {
+      "$date": "2026-08-23T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-08-23T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  }
+]

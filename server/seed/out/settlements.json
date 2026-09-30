@@ -1,0 +1,1454 @@
+[
+  {
+    "_id": {
+      "$oid": "0ca1bc751599045e4f2032b1"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "fad7f982fe6ede5b503077c1"
+    },
+    "from": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 350,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "b554e766df118bdd85bc6ce3"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "fad7f982fe6ede5b503077c1"
+    },
+    "from": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 350,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "d208dd4fbb5bc92f48986a6b"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "fad7f982fe6ede5b503077c1"
+    },
+    "from": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 350,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "2d433b64a294be38eacd5fd7"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "4fa020a0d3c364e5f34b348c"
+    },
+    "from": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "to": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "amount": 1882.17,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-27T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-27T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "223f3fb10751d6151ab5290b"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "4fa020a0d3c364e5f34b348c"
+    },
+    "from": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "to": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "amount": 2255.92,
+    "status": "marked_paid",
+    "createdAt": {
+      "$date": "2026-09-27T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "7641e02a842af3b0c0cf964d"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "4fa020a0d3c364e5f34b348c"
+    },
+    "from": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "to": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "amount": 1546.75,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-27T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-27T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "21249fc47a5bc3872c858db0"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "3c8af4fc53e1239a5246419e"
+    },
+    "from": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 1653.13,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "fb5ca6eab4d82d635e4340b6"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "3c8af4fc53e1239a5246419e"
+    },
+    "from": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 1630.13,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "e1edc97b6972030dcc9d4e88"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "3c8af4fc53e1239a5246419e"
+    },
+    "from": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 733.13,
+    "status": "marked_paid",
+    "createdAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-24T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "7530077fdb6f3c540d211476"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "df1bde08a7a740aa57ca8d22"
+    },
+    "from": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "to": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "amount": 1050.9,
+    "status": "marked_paid",
+    "createdAt": {
+      "$date": "2026-09-16T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "04eb28d10d6b6590f6419405"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "df1bde08a7a740aa57ca8d22"
+    },
+    "from": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "to": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "amount": 1135.65,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-09-18T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-09-16T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-18T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "eed381b051b346d31d35d1ac"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "df1bde08a7a740aa57ca8d22"
+    },
+    "from": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "to": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "amount": 1050.9,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-16T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-16T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "4ff0ae8e38eb63c36faca4e4"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "1bd513f1358a668791792f3d"
+    },
+    "from": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "to": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "amount": 1638.5,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-08-23T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-08-21T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-08-23T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "330595343531aace618cb18e"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "1bd513f1358a668791792f3d"
+    },
+    "from": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "to": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "amount": 960.5,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-08-23T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-08-21T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-08-23T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "878c408f16ebc4048bcdee35"
+    },
+    "group": {
+      "$oid": "6ce9791e7ef2db15c8baeaa7"
+    },
+    "expense": {
+      "$oid": "1bd513f1358a668791792f3d"
+    },
+    "from": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "to": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "amount": 1638.5,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-08-23T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-08-21T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-08-23T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "db5785f842c68b96fda445f1"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "c875d4b8d8cc683c4e27c055"
+    },
+    "from": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "to": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "amount": 9000,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-09-13T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "a38b9c8d90be3ca670d99377"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "c875d4b8d8cc683c4e27c055"
+    },
+    "from": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "to": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "amount": 9000,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-09-13T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "c86d224fc8bb34e7ed5a2a2c"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "c875d4b8d8cc683c4e27c055"
+    },
+    "from": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "to": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "amount": 9000,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-09-13T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "fa77f2ed504c77be3baca2c8"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "c875d4b8d8cc683c4e27c055"
+    },
+    "from": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "to": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "amount": 9000,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-13T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-13T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "74576fea8f7c4b45556a7f21"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "6ab9d08b5e7b742c9fe3b246"
+    },
+    "from": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 6400,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-14T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-14T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "660609b1513135ec3eee34c1"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "6ab9d08b5e7b742c9fe3b246"
+    },
+    "from": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 6400,
+    "status": "marked_paid",
+    "createdAt": {
+      "$date": "2026-09-14T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "7a225ace906afeca998c2680"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "6ab9d08b5e7b742c9fe3b246"
+    },
+    "from": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 6400,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-14T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-14T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "47f667f5d814196ec38078d7"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "6ab9d08b5e7b742c9fe3b246"
+    },
+    "from": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 6400,
+    "status": "marked_paid",
+    "createdAt": {
+      "$date": "2026-09-14T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "67360d613674ddeec429646f"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "4b13a0711d4fba0982757bd3"
+    },
+    "from": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "to": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "amount": 2500,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "49649a60c51bb043ffa8d5ff"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "4b13a0711d4fba0982757bd3"
+    },
+    "from": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "to": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "amount": 2500,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "c8321fa5fe97ec42b9418704"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "4b13a0711d4fba0982757bd3"
+    },
+    "from": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "to": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "amount": 2500,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "25d472e2f6032800428a69fd"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "4b13a0711d4fba0982757bd3"
+    },
+    "from": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "to": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "amount": 2500,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "850fffc96572c3552c8e0a0f"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "5f316bf8bd7fdda58054ba9d"
+    },
+    "from": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "to": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "amount": 1317.6,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "733c537bc20cf0d10c5220aa"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "5f316bf8bd7fdda58054ba9d"
+    },
+    "from": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "to": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "amount": 1317.6,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "1a94af707e6ec757a94cc416"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "5f316bf8bd7fdda58054ba9d"
+    },
+    "from": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "to": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "amount": 1317.6,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-17T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "31f390b67016bd989b9e96e1"
+    },
+    "group": {
+      "$oid": "6942e65e9182672d2b36a8db"
+    },
+    "expense": {
+      "$oid": "5f316bf8bd7fdda58054ba9d"
+    },
+    "from": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "to": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "amount": 1155.6,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-15T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "e77265c0c5b491cc7d83e43c"
+    },
+    "group": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "expense": {
+      "$oid": "a61424f6e32e2aaa96931914"
+    },
+    "from": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "to": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "amount": 1200,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-26T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-26T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "eb1a5ca53999d28e24bfe1b2"
+    },
+    "group": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "expense": {
+      "$oid": "a61424f6e32e2aaa96931914"
+    },
+    "from": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "to": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "amount": 1200,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-09-26T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "1186a82b9ac0272637ed38b2"
+    },
+    "group": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "expense": {
+      "$oid": "dad518944e5120a67722df1d"
+    },
+    "from": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "to": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "amount": 4933.33,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-24T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-24T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "f928bd236caefa7d69ec8cdb"
+    },
+    "group": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "expense": {
+      "$oid": "dad518944e5120a67722df1d"
+    },
+    "from": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "to": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "amount": 4933.33,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-09-26T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-09-24T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-26T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "5ae03f1e77d5405064ce35b9"
+    },
+    "group": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "expense": {
+      "$oid": "82471675fefcc383ebb96381"
+    },
+    "from": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 1500,
+    "status": "marked_paid",
+    "createdAt": {
+      "$date": "2026-09-20T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "88d1464c6c9de52dbc7fcaf5"
+    },
+    "group": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "expense": {
+      "$oid": "82471675fefcc383ebb96381"
+    },
+    "from": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 1500,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-20T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-20T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "407a20f366166d10058c928a"
+    },
+    "group": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "expense": {
+      "$oid": "9204b2b0adb7e697fe0b46b0"
+    },
+    "from": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 4400,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-08-25T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-08-23T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-08-25T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "73bd4355603f99d2e75c2b0c"
+    },
+    "group": {
+      "$oid": "b29d1226e519d87e9b374333"
+    },
+    "expense": {
+      "$oid": "9204b2b0adb7e697fe0b46b0"
+    },
+    "from": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 4400,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-08-25T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-08-23T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-08-25T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "e4795e5be927194118f15609"
+    },
+    "group": {
+      "$oid": "e5790d09e5c64c3eb2471fdc"
+    },
+    "expense": {
+      "$oid": "5c358b0b471ec10f896cc512"
+    },
+    "from": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 800,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-25T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-25T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "c9978b16e10fbad327384614"
+    },
+    "group": {
+      "$oid": "e5790d09e5c64c3eb2471fdc"
+    },
+    "expense": {
+      "$oid": "5c358b0b471ec10f896cc512"
+    },
+    "from": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "to": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "amount": 800,
+    "status": "marked_paid",
+    "createdAt": {
+      "$date": "2026-09-25T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-26T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "e62cf9fab2f6e60c72ba3c91"
+    },
+    "group": {
+      "$oid": "e5790d09e5c64c3eb2471fdc"
+    },
+    "expense": {
+      "$oid": "c96a8af3957a164f7fe6d277"
+    },
+    "from": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "to": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "amount": 2600,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-09-19T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "06c46b57f86119d47e627a24"
+    },
+    "group": {
+      "$oid": "e5790d09e5c64c3eb2471fdc"
+    },
+    "expense": {
+      "$oid": "c96a8af3957a164f7fe6d277"
+    },
+    "from": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "to": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "amount": 2600,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-19T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-19T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "788685b08d39887c387e8e36"
+    },
+    "group": {
+      "$oid": "5e30ff0f2381fd2680aad4fe"
+    },
+    "expense": {
+      "$oid": "7c733ecad9f551b68142c7e0"
+    },
+    "from": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "to": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "amount": 1500,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "5dd50cf032787bc839c81822"
+    },
+    "group": {
+      "$oid": "5e30ff0f2381fd2680aad4fe"
+    },
+    "expense": {
+      "$oid": "7c733ecad9f551b68142c7e0"
+    },
+    "from": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "to": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "amount": 1500,
+    "status": "marked_paid",
+    "createdAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-29T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "aa2be7714860f74c73054a6b"
+    },
+    "group": {
+      "$oid": "5e30ff0f2381fd2680aad4fe"
+    },
+    "expense": {
+      "$oid": "7c733ecad9f551b68142c7e0"
+    },
+    "from": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "to": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "amount": 1500,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-28T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "1605a786f3ad5a91c6478b19"
+    },
+    "group": {
+      "$oid": "5e30ff0f2381fd2680aad4fe"
+    },
+    "expense": {
+      "$oid": "3b28971ddd83df95af001268"
+    },
+    "from": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "to": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "amount": 1500,
+    "status": "cleared",
+    "clearedAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-23T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "9724a16bbdb27c6c60319b52"
+    },
+    "group": {
+      "$oid": "5e30ff0f2381fd2680aad4fe"
+    },
+    "expense": {
+      "$oid": "3b28971ddd83df95af001268"
+    },
+    "from": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "to": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "amount": 1500,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "cb9464e70736a80aa065a086"
+    },
+    "group": {
+      "$oid": "5e30ff0f2381fd2680aad4fe"
+    },
+    "expense": {
+      "$oid": "3b28971ddd83df95af001268"
+    },
+    "from": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "to": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "amount": 1500,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-21T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "0cce29de65d57fdb397b19ff"
+    },
+    "group": {
+      "$oid": "7dbc060baeee4e0a017e7d97"
+    },
+    "expense": {
+      "$oid": "3e8386f992cef48e2620b008"
+    },
+    "from": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "to": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "amount": 2625,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-22T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-22T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "1ce4979337a36180881f52d2"
+    },
+    "group": {
+      "$oid": "7dbc060baeee4e0a017e7d97"
+    },
+    "expense": {
+      "$oid": "3e8386f992cef48e2620b008"
+    },
+    "from": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "to": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "amount": 2625,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-22T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-22T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "d294751e4ddb2794cfd6ae04"
+    },
+    "group": {
+      "$oid": "7dbc060baeee4e0a017e7d97"
+    },
+    "expense": {
+      "$oid": "3e8386f992cef48e2620b008"
+    },
+    "from": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "to": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "amount": 2625,
+    "status": "pending",
+    "createdAt": {
+      "$date": "2026-09-22T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-22T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  }
+]

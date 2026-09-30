@@ -1,0 +1,200 @@
+[
+  {
+    "_id": {
+      "$oid": "92f2e43347acbd917ddcf0a7"
+    },
+    "username": "ali",
+    "email": "ali@demo.com",
+    "password": "$2a$10$8b6ySvmH/S9jpb19fyWp2.pvqMvDYLFGe2gICGCCXL2k3FKiM0bOq",
+    "profile": {
+      "displayName": "Ali Raza",
+      "avatarUrl": ""
+    },
+    "friends": [
+      {
+        "$oid": "a2cf26a6dc7657117d3dc428"
+      },
+      {
+        "$oid": "5e5cd8c5cc56d124f6b880d1"
+      },
+      {
+        "$oid": "046a5cc0b995f4d2c41e4128"
+      },
+      {
+        "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+      },
+      {
+        "$oid": "9bc021389a1e79ad6b458a40"
+      }
+    ],
+    "createdAt": {
+      "$date": "2026-06-01T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-01T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "a2cf26a6dc7657117d3dc428"
+    },
+    "username": "sara",
+    "email": "sara@demo.com",
+    "password": "$2a$10$8b6ySvmH/S9jpb19fyWp2.pvqMvDYLFGe2gICGCCXL2k3FKiM0bOq",
+    "profile": {
+      "displayName": "Sara Khan",
+      "avatarUrl": ""
+    },
+    "friends": [
+      {
+        "$oid": "92f2e43347acbd917ddcf0a7"
+      },
+      {
+        "$oid": "5e5cd8c5cc56d124f6b880d1"
+      },
+      {
+        "$oid": "046a5cc0b995f4d2c41e4128"
+      }
+    ],
+    "createdAt": {
+      "$date": "2026-06-03T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-03T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "5e5cd8c5cc56d124f6b880d1"
+    },
+    "username": "omar",
+    "email": "omar@demo.com",
+    "password": "$2a$10$8b6ySvmH/S9jpb19fyWp2.pvqMvDYLFGe2gICGCCXL2k3FKiM0bOq",
+    "profile": {
+      "displayName": "Omar Sheikh",
+      "avatarUrl": ""
+    },
+    "friends": [
+      {
+        "$oid": "92f2e43347acbd917ddcf0a7"
+      },
+      {
+        "$oid": "a2cf26a6dc7657117d3dc428"
+      },
+      {
+        "$oid": "046a5cc0b995f4d2c41e4128"
+      },
+      {
+        "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+      }
+    ],
+    "createdAt": {
+      "$date": "2026-06-11T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-11T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "046a5cc0b995f4d2c41e4128"
+    },
+    "username": "hina",
+    "email": "hina@demo.com",
+    "password": "$2a$10$8b6ySvmH/S9jpb19fyWp2.pvqMvDYLFGe2gICGCCXL2k3FKiM0bOq",
+    "profile": {
+      "displayName": "Hina Malik",
+      "avatarUrl": ""
+    },
+    "friends": [
+      {
+        "$oid": "92f2e43347acbd917ddcf0a7"
+      },
+      {
+        "$oid": "a2cf26a6dc7657117d3dc428"
+      },
+      {
+        "$oid": "5e5cd8c5cc56d124f6b880d1"
+      },
+      {
+        "$oid": "9bc021389a1e79ad6b458a40"
+      }
+    ],
+    "createdAt": {
+      "$date": "2026-06-17T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-17T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+    },
+    "username": "bilal",
+    "email": "bilal@demo.com",
+    "password": "$2a$10$8b6ySvmH/S9jpb19fyWp2.pvqMvDYLFGe2gICGCCXL2k3FKiM0bOq",
+    "profile": {
+      "displayName": "Bilal Ahmed",
+      "avatarUrl": ""
+    },
+    "friends": [
+      {
+        "$oid": "92f2e43347acbd917ddcf0a7"
+      },
+      {
+        "$oid": "5e5cd8c5cc56d124f6b880d1"
+      },
+      {
+        "$oid": "9bc021389a1e79ad6b458a40"
+      }
+    ],
+    "createdAt": {
+      "$date": "2026-06-25T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-25T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  },
+  {
+    "_id": {
+      "$oid": "9bc021389a1e79ad6b458a40"
+    },
+    "username": "zainab",
+    "email": "zainab@demo.com",
+    "password": "$2a$10$8b6ySvmH/S9jpb19fyWp2.pvqMvDYLFGe2gICGCCXL2k3FKiM0bOq",
+    "profile": {
+      "displayName": "Zainab Qureshi",
+      "avatarUrl": ""
+    },
+    "friends": [
+      {
+        "$oid": "92f2e43347acbd917ddcf0a7"
+      },
+      {
+        "$oid": "046a5cc0b995f4d2c41e4128"
+      },
+      {
+        "$oid": "a14bbc96baf4b0ee9cf9e1cf"
+      }
+    ],
+    "createdAt": {
+      "$date": "2026-07-01T21:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2026-07-01T21:30:00.000Z"
+    },
+    "__v": 0,
+    "demoSeed": true
+  }
+]
