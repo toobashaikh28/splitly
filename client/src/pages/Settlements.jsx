@@ -3,6 +3,7 @@ import { CheckCircle2, HandCoins } from "lucide-react";
 import api from "../api/axios.js";
 import useResource from "../hooks/useResource.js";
 import { errorMessage } from "../utils/errors.js";
+import { formatMoney } from "../utils/format.js";
 import { Page, PageHeader, PageColumns, Section, Panel, AsidePanel, StatList, Stat } from "../components/ui/Page.jsx";
 import Button from "../components/ui/Button.jsx";
 import Alert from "../components/ui/Alert.jsx";
@@ -75,12 +76,22 @@ export default function Settlements() {
   const { data, error, loading, reload } = useResource("/settlements/mine");
   const [busyId, setBusyId] = useState(null);
   const [actionError, setActionError] = useState("");
+  const [notice, setNotice] = useState("");
 
   const run = async (id, path, fallback) => {
     setActionError("");
+    setNotice("");
     setBusyId(id);
     try {
+      // Remember who and how much before the row leaves the list.
+      const owed = data?.owed?.find((s) => s._id === id);
+      const owe = data?.owe?.find((s) => s._id === id);
       await api.patch(`/settlements/${id}/${path}`);
+      if (path === "confirm" && owed) {
+        setNotice(`Confirmed. ${formatMoney(owed.amount)} from @${owed.from?.username} is cleared, so it has left this list.`);
+      } else if (path === "mark-paid" && owe) {
+        setNotice(`Marked as paid. Once @${owe.to?.username} confirms it, the payment is cleared.`);
+      }
       await reload();
     } catch (err) {
       setActionError(errorMessage(err, fallback));
@@ -99,6 +110,12 @@ export default function Settlements() {
       {actionError && (
         <Alert tone="error" className="mb-6" onDismiss={() => setActionError("")}>
           {actionError}
+        </Alert>
+      )}
+
+      {notice && (
+        <Alert tone="success" className="mb-6" onDismiss={() => setNotice("")}>
+          {notice}
         </Alert>
       )}
 
@@ -130,7 +147,7 @@ export default function Settlements() {
                           Mark as paid
                         </Button>
                       ) : (
-                        <StatusBadge status={s.status} />
+                        <StatusBadge status={s.status} direction="owe" />
                       )
                     }
                   />
@@ -160,7 +177,7 @@ export default function Settlements() {
                           Confirm received
                         </Button>
                       ) : (
-                        <StatusBadge status={s.status} />
+                        <StatusBadge status={s.status} direction="owed" />
                       )
                     }
                   />

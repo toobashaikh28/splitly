@@ -13,7 +13,7 @@ A full-stack expense splitter with item-level splitting, proportional tax, a con
 ![Express](https://img.shields.io/badge/Express-4-000000?logo=express&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white)
 
-<!-- Add your live demo link here, for example: **[Live demo](https://your-app.vercel.app)** -->
+**[Live demo](https://splitly-lac.vercel.app)** &nbsp;|&nbsp; Demo login: `ali@demo.com` / `Demo@1234`
 
 ![Splitly dashboard](docs/screenshots/02-dashboard.png)
 
@@ -72,7 +72,7 @@ Most bill-splitting apps divide the total equally, so the person who ordered a s
 - Set the tax percentage. It is split in proportion to each person's subtotal.
 - Choose who paid, and see a live receipt-style summary before you confirm.
 - Guardrails: an item can't be saved without at least one person assigned.
-- **AI receipt scan (optional).** Upload a photo of a receipt and the items, prices and tax are extracted and pre-filled for you to review. Manual entry always works without it.
+- **AI receipt scan (optional).** Upload a photo of a receipt and the items, prices and tax are extracted and pre-filled for you to review. Photos are resized in the browser before upload, so scans stay fast and within hosting size limits. Manual entry always works without it.
 
 ### Settlements
 - A clear three-step flow: the person who owes **marks it as paid**, the person owed **confirms it**, and the payment is **cleared**.
@@ -131,7 +131,7 @@ Most bill-splitting apps divide the total equally, so the person who ordered a s
 | **Auth** | JSON Web Tokens, bcrypt password hashing |
 | **File upload** | Multer (in-memory, 8 MB limit) for receipt scans |
 | **AI (optional)** | Google Gemini for receipt scanning |
-| **Suggested hosting** | Vercel (client), Render (server), MongoDB Atlas (database) |
+| **Hosting** | Vercel (website and API as two projects), MongoDB Atlas (database) |
 
 ---
 
@@ -157,9 +157,11 @@ stateDiagram-v2
 
 | Status | Shown as | Who can act next |
 | --- | --- | --- |
-| `pending` | Pending | The person who owes marks it as paid |
-| `marked_paid` | Awaiting confirmation | The person owed confirms receipt |
+| `pending` | **To pay** (for the person who owes) or **Waiting for payment** (for the person owed) | The person who owes marks it as paid |
+| `marked_paid` | **Awaiting confirmation** (for the payer) or **Needs your confirmation** (for the person owed) | The person owed confirms receipt |
 | `cleared` | Cleared | Nobody. It leaves everyone's outstanding list |
+
+After each step, Settle up shows a short confirmation message, so you can see the click worked. A cleared payment disappears from the list by design.
 
 ### Simplify debts
 Raw settlements can form chains (A owes B, B owes C). Splitly works out each person's net balance, then greedily matches the largest debtor with the largest creditor until everything is zero.
@@ -179,8 +181,8 @@ The simplified result is a **preview**. It doesn't change any stored payments.
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/toobashaikh28/splitly.git
+cd splitly
 ```
 
 ### 2. Set up the server
@@ -201,7 +203,7 @@ copy .env.example .env
 | Variable | Required | Description |
 | --- | :---: | --- |
 | `MONGO_URI` | Yes | MongoDB connection string |
-| `MONGO_DB_NAME` | Yes | Database name, for example `splitly` |
+| `MONGO_DB_NAME` | No | Database name, for reference. The app takes the database name from `MONGO_URI`, so include it there (for example `…mongodb.net/splitly`) |
 | `JWT_SECRET` | Yes | Long random string used to sign login tokens |
 | `PORT` | No | Server port. Defaults to `5000` |
 | `GEMINI_API_KEY` | No | Enables receipt scanning. Without it, manual entry still works |
@@ -281,9 +283,11 @@ node seed/generate-demo-data.mjs
 
 | Badge | Meaning |
 | --- | --- |
-| Grey **Pending** | Nothing has happened yet |
-| Amber **Awaiting confirmation** | The payer says they've paid, and the other person hasn't confirmed |
-| Green **Cleared** | Confirmed and finished |
+| Grey **To pay** | You owe this and haven't paid yet. Use **Mark as paid** |
+| Grey **Waiting for payment** | Someone owes you and hasn't paid yet |
+| Amber **Awaiting confirmation** | You marked it as paid, and the other person hasn't confirmed yet |
+| Amber **Needs your confirmation** | They say they've paid you. Use **Confirm received** to clear it |
+| Green **Cleared** | Confirmed and finished. Cleared payments leave the Settle up list |
 
 **Budget bars**
 
@@ -461,14 +465,19 @@ The interface follows a restrained "ledger" look: cool neutral surfaces, hairlin
 
 ## Deployment
 
-The suggested setup is **MongoDB Atlas + Render (API) + Vercel (website)**.
+Splitly runs on **MongoDB Atlas + two Vercel projects** created from the same repository: one for the API and one for the website.
 
-1. **Database.** In Atlas, under *Network Access*, allow connections from your host. Render uses changing addresses, so `0.0.0.0/0` is the usual setting.
-2. **Server on Render.** Create a Web Service with *Root Directory* `server`, *Build Command* `npm install` and *Start Command* `npm start`. Add the environment variables from the [server table](#2-set-up-the-server), and set `NODE_VERSION` to `20`. Use a new, strong `JWT_SECRET` in production. Confirm `https://<your-service>.onrender.com/api/health` responds.
-3. **Client on Vercel.** Import the repository with *Root Directory* `client` and the Vite preset. Set `VITE_API_URL` to your Render address, without a trailing slash and without `/api`. Vite reads this at build time, so redeploy after changing it. `client/vercel.json` and `client/public/_redirects` make page refreshes work with client-side routing.
-4. **Restrict CORS (recommended).** In `server/server.js`, use `app.use(cors({ origin: process.env.CLIENT_URL || true }))` and set `CLIENT_URL` to your Vercel address.
+1. **Database.** In Atlas, under *Network Access*, allow connections from anywhere (`0.0.0.0/0`). Vercel's server addresses change, so a fixed address won't work.
+2. **API on Vercel.** Import the repository with *Root Directory* `server` and the Express preset. Add the environment variables from the [server table](#2-set-up-the-server) as **Secret** values: `MONGO_URI`, `MONGO_DB_NAME`, `JWT_SECRET`, `GEMINI_API_KEY` and `GEMINI_MODEL`. Use a new, strong `JWT_SECRET` in production. Under *Settings → Deployment Protection*, turn **Vercel Authentication** off so the website can call the API. Then confirm `https://<your-api>.vercel.app/api/health` responds.
+3. **Website on Vercel.** Import the same repository with *Root Directory* `client` and the Vite preset. Add `VITE_API_URL` set to your API address, without a trailing slash and without `/api`. Create it as a plain (non-secret) variable, because the browser needs to read it. Vite reads it at build time, so redeploy after changing it. `client/vercel.json` and `client/public/_redirects` make page refreshes work with client-side routing.
+4. **Custom domain (optional).** Add your domain to the **website** project under *Settings → Domains*.
+5. **Restrict CORS (recommended).** In `server/server.js`, use `app.use(cors({ origin: process.env.CLIENT_URL || true }))` and set `CLIENT_URL` to your website address.
 
-> **Note:** Render's free instances go to sleep after about 15 minutes without traffic, so the first request afterwards can take 30 to 60 seconds. Open the health URL shortly before a demo to warm it up.
+**How the server is set up for Vercel.** Vercel runs the API on demand and pauses it between requests, so `server/server.js` exports the Express app and only opens a port when it is *not* running on Vercel. The database connection is created on the first request and reused afterwards.
+
+**Size limit.** Vercel rejects request bodies larger than 4.5 MB. Receipt photos are therefore shrunk in the browser before upload (see `client/src/utils/image.js`).
+
+Prefer a long-running server? Any Node host works (for example Render or Railway). Point `VITE_API_URL` at it, and the server code runs unchanged.
 
 Never commit your `.env` file. It is already listed in `.gitignore`.
 
@@ -479,7 +488,10 @@ Never commit your `.env` file. It is already listed in `.gitignore`.
 | Problem | Likely cause and fix |
 | --- | --- |
 | `querySrv ECONNREFUSED` or `ENOTFOUND` when connecting to Atlas | Your network or DNS can't resolve the `mongodb+srv://` address. Switch your system DNS to `8.8.8.8` and `1.1.1.1`, try another network, or use the standard `mongodb://` connection string from Atlas |
-| Server exits right after starting | Check `MONGO_URI`, `MONGO_DB_NAME` and `JWT_SECRET` in `server/.env` |
+| Server exits right after starting | Check `MONGO_URI` and `JWT_SECRET` in `server/.env` |
+| Browser shows a CORS error, but `/api/health` works | The API is failing when it connects to the database. Open the API project's *Logs* in Vercel and read the `MongoDB connection error` line. It is usually the Atlas *Network Access* list or a mistyped `MONGO_URI` |
+| Deployed site says it can't reach the server | `VITE_API_URL` is missing or wrong, or it was saved as a Secret. Recreate it as a plain variable and redeploy the website |
+| API link asks you to log in to Vercel | Turn off *Vercel Authentication* under the API project's *Deployment Protection* settings |
 | "Network Error" in the browser | The server isn't running, or `VITE_API_URL` is wrong, or CORS is blocking your website address |
 | The website loads but shows no data on Atlas | Your IP isn't allowed in Atlas *Network Access* |
 | A page gives a 404 after refresh in production | The single-page-app rewrite is missing. Keep `client/vercel.json` (Vercel) or `client/public/_redirects` (Netlify) |
@@ -495,6 +507,7 @@ Never commit your `.env` file. It is already listed in `.gitignore`.
 - Notifications are in-app only, and reminders and group-invite notifications aren't triggered yet. Email and push delivery aren't wired up.
 - Receipt scanning handles a single clear image. Blurry or multi-page receipts fall back to manual entry.
 - CORS is open by default and should be restricted in production.
+- The API runs on demand, so the first request after a quiet period can be slightly slower while it reconnects to the database.
 - The client ships as a single JavaScript bundle without code-splitting.
 - There is no automated test suite yet.
 

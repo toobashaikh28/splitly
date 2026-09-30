@@ -8,7 +8,20 @@ const STATUS = {
   cleared: { tone: "positive", label: "Cleared" },
 };
 
-export default function StatusBadge({ status }) {
-  const { tone, label } = STATUS[status] || { tone: "neutral", label: status };
-  return <Badge tone={tone}>{label}</Badge>;
+// When we know which side of the payment the viewer is on, say whose move it is.
+const BY_DIRECTION = {
+  owe: {
+    pending: "To pay",
+    marked_paid: "Awaiting confirmation", // you paid, they confirm
+  },
+  owed: {
+    pending: "Waiting for payment",
+    marked_paid: "Needs your confirmation", // they paid, you confirm
+  },
+};
+
+export default function StatusBadge({ status, direction }) {
+  const base = STATUS[status] || { tone: "neutral", label: status };
+  const label = BY_DIRECTION[direction]?.[status] || base.label;
+  return <Badge tone={base.tone}>{label}</Badge>;
 }

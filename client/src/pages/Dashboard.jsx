@@ -190,7 +190,7 @@ export default function Dashboard() {
                     </div>
                     <Amount value={item.amount} tone={isOwe ? "owe" : "owed"} sign className="text-body font-semibold sm:col-start-4 sm:row-start-1 sm:text-right" />
                     <div className="col-start-2 justify-self-start sm:col-start-3 sm:row-start-1">
-                      <StatusBadge status={item.status} />
+                      <StatusBadge status={item.status} direction={isOwe ? "owe" : "owed"} />
                     </div>
                   </div>
                 );
