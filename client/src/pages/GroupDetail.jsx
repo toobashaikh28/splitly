@@ -67,6 +67,13 @@ export default function GroupDetail() {
   }
 
   const { group, expenses, balances } = data;
+
+  // The simplify endpoint returns user ids, so look names up from the balances.
+  const nameOf = (id) => {
+    const match = balances.find((b) => String(b.user.id) === String(id));
+    return match ? `@${match.user.username}` : "Someone";
+  };
+  const isMe = (id) => Boolean(user) && String(id) === String(user.id);
   const inviteUrl = `${window.location.origin}/join/${group.inviteCode}`;
 
   const copyInvite = async () => {
@@ -154,7 +161,8 @@ export default function GroupDetail() {
                       {simplified.optimized.map((s, i) => (
                         <li key={i} className="flex items-baseline justify-between gap-3 text-body">
                           <span className="min-w-0 truncate text-muted">
-                            <span className="text-ink">{s.from}</span> pays <span className="text-ink">{s.to}</span>
+                            <span className="text-ink">{isMe(s.from) ? "You" : nameOf(s.from)}</span> {isMe(s.from) ? "pay" : "pays"}{" "}
+                            <span className="text-ink">{isMe(s.to) ? "you" : nameOf(s.to)}</span>
                           </span>
                           <span className="tnum shrink-0 font-medium text-ink">{formatMoney(s.amount)}</span>
                         </li>

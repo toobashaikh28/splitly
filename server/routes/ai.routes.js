@@ -21,61 +21,77 @@ Respond with ONLY valid JSON in this exact shape, nothing else — no markdown f
 If the tax is shown as a flat amount rather than a percent, set taxAmount and leave taxPercent null.
 If you cannot read the receipt clearly, return items: [] and merchant: null so the app can fall back to manual entry.`;
 
+// Set GEMINI_MODEL in your environment to use a different model.
+const DEFAULT_MODEL = "gemini-3.5-flash";
+
 // POST /api/ai/scan-receipt  (multipart/form-data, field name "receipt")
 router.post("/scan-receipt", upload.single("receipt"), async (req, res) => {
   try {
-    if (!process.env.ANTHROPIC_API_KEY) {
+    if (!process.env.GEMINI_API_KEY) {
       return res.status(503).json({
-        message: "AI bill scan isn't configured — add ANTHROPIC_API_KEY to your server .env, or use manual entry.",
+        message: "AI bill scan isn't configured — add GEMINI_API_KEY to your server .env, or use manual entry.",
       });
     }
     if (!req.file) {
       return res.status(400).json({ message: "No receipt image uploaded" });
     }
+    if (!req.file.mimetype?.startsWith("image/")) {
+      return res.status(400).json({ message: "Please upload an image of the receipt" });
+    }
 
     const base64Image = req.file.buffer.toString("base64");
-    const mediaType = req.file.mimetype; // e.g. "image/jpeg"
+    const model = process.env.GEMINI_MODEL || DEFAULT_MODEL;
 
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": process.env.ANTHROPIC_API_KEY,
-        "anthropic-version": "2023-06-01",
-      },
-      body: JSON.stringify({
-        model: process.env.ANTHROPIC_MODEL || "claude-sonnet-5",
-        max_tokens: 1024,
-        messages: [
-          {
-            role: "user",
-            content: [
-              { type: "image", source: { type: "base64", media_type: mediaType, data: base64Image } },
-              { type: "text", text: EXTRACTION_PROMPT },
-            ],
-          },
-        ],
-      }),
-    });
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-goog-api-key": process.env.GEMINI_API_KEY,
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [
+                { text: EXTRACTION_PROMPT },
+                { inline_data: { mime_type: req.file.mimetype, data: base64Image } },
+              ],
+            },
+          ],
+          // Ask for JSON directly; the parser below also copes with stray fences.
+          generationConfig: { responseMimeType: "application/json", temperature: 0 },
+        }),
+      }
+    );
 
     if (!response.ok) {
       const errText = await response.text();
-      console.error("Anthropic API error:", errText);
+      console.error("Gemini API error:", response.status, errText);
       return res.status(502).json({ message: "The AI extraction service returned an error. Try manual entry instead." });
     }
 
     const data = await response.json();
-    const textBlock = data.content?.find((block) => block.type === "text");
-    if (!textBlock) {
+
+    if (data.promptFeedback?.blockReason) {
+      console.error("Gemini blocked the request:", data.promptFeedback.blockReason);
+      return res.status(502).json({ message: "The AI service couldn't process that image. Try manual entry instead." });
+    }
+
+    const text = (data.candidates?.[0]?.content?.parts || [])
+      .map((part) => part.text || "")
+      .join("")
+      .trim();
+    if (!text) {
       return res.status(502).json({ message: "AI response had no readable content" });
     }
 
     let extracted;
     try {
-      const cleaned = textBlock.text.replace(/```json|```/g, "").trim();
+      const cleaned = text.replace(/```json|```/g, "").trim();
       extracted = JSON.parse(cleaned);
     } catch (parseErr) {
-      console.error("Failed to parse AI JSON:", textBlock.text);
+      console.error("Failed to parse AI JSON:", text);
       return res.status(502).json({ message: "Couldn't parse the receipt. Try manual entry instead." });
     }
 
