@@ -28,7 +28,7 @@ function ReceiptSpecimen() {
     <div aria-hidden="true" className="w-full max-w-xs">
       <div className="bg-white px-5 pb-5 pt-5 font-mono text-[12.5px] leading-5 text-ink">
         <div className="flex items-center justify-between">
-          <span className="font-semibold uppercase tracking-wide">Coconet Grove</span>
+          <span className="font-semibold uppercase tracking-wide">Coconut Grove</span>
           <span className="text-subtle">Example</span>
         </div>
         <div className="perforation my-3" />

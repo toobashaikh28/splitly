@@ -212,7 +212,7 @@ export default function CreateExpense() {
                 required
                 value={merchant}
                 onChange={(e) => setMerchant(e.target.value)}
-                placeholder="Coconet Grove"
+                placeholder="Coconut Grove"
               />
               <Select label="Category" value={category} onChange={(e) => setCategory(e.target.value)}>
                 {CATEGORIES.map((c) => (
